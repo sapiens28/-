@@ -1,131 +1,130 @@
 <!doctype html>
 <html lang="zh-Hant">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self' blob: data:; script-src 'unsafe-inline'; style-src 'unsafe-inline'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
-<title>劦成｜A1 紙箱印刷模板・部署預覽</title>
-<style>
-:root{--bg:#f5f4ef;--card:#fff;--ink:#243731;--muted:#64756d;--line:#dde3dc;--accent:#356451;--soft:#eaf1eb;--warn:#785623;--warnbg:#faf2e3;--error:#a23531;--r:16px}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC","Microsoft JhengHei",sans-serif;line-height:1.5}
-header{background:#fff;border-bottom:1px solid var(--line);padding:18px 28px;display:flex;justify-content:space-between;gap:16px;align-items:center}.brand{display:flex;gap:12px;align-items:center}.mark{font-size:24px;font-weight:800;letter-spacing:.08em;border-right:1px solid var(--line);padding-right:14px}.sub{font-size:12px;color:var(--muted)}.pill{font-size:12px;border-radius:99px;padding:5px 11px;background:var(--soft);color:var(--accent)}
-main{max-width:1500px;margin:auto;padding:24px}.intro{margin-bottom:16px}.intro h1{font-size:26px;margin:0 0 5px}.intro p{margin:0;color:var(--muted);font-size:14px}.grid{display:grid;grid-template-columns:330px minmax(0,1fr);gap:20px}.card{background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden}.controls{padding:20px}.eyebrow{font-size:11px;font-weight:800;letter-spacing:.12em;color:var(--accent)}h2{font-size:17px;margin:5px 0 15px}.row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}.row2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.field{display:block;font-size:13px;font-weight:650}.field span{display:block;margin-bottom:5px}.field input{width:100%;min-height:44px;border:1px solid #cbd5cd;border-radius:9px;padding:8px 9px;font:inherit;color:var(--ink)}.field input:disabled{background:#f2f4f1;color:#66756d}.sep{height:1px;background:var(--line);margin:18px 0}.check{display:flex;gap:9px;align-items:center;min-height:44px;font-size:13px;cursor:pointer}.check input{width:17px;height:17px;accent-color:var(--accent)}.hint{font-size:12px;color:var(--muted);margin:7px 0}.warn{background:var(--warnbg);color:var(--warn);font-size:12px;padding:11px 12px;border-radius:10px;margin-top:12px}.presets{display:flex;gap:7px;flex-wrap:wrap;margin-top:10px}
-button{font:inherit;cursor:pointer}.btn{min-height:44px;border:1px solid #cbd5cd;border-radius:9px;background:#fff;color:var(--ink);padding:8px 12px;font-weight:650;font-size:13px}.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}.preset{font-size:11px;padding:6px 8px}.previewHead{padding:17px 20px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:12px;align-items:center}.previewHead h2{margin:0}.previewHead p{font-size:12px;color:var(--muted);margin:3px 0 0}.drawing{padding:14px;background:#fbfcfa;overflow:auto;max-height:620px}.drawing svg{display:block;width:100%;height:auto}.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border-top:1px solid var(--line)}.metric{background:#fff;padding:13px 16px}.metric small{display:block;color:var(--muted);font-size:12px}.metric strong{font-size:19px}.actions{padding:17px 20px;border-top:1px solid var(--line);display:flex;gap:9px;flex-wrap:wrap}.error{margin-bottom:15px;background:#fcefeb;color:var(--error);border:1px solid #edc8c0;border-radius:10px;padding:10px 13px;font-size:13px}.error[hidden]{display:none}footer{font-size:11px;color:var(--muted);padding-top:14px}
-@media(max-width:800px){header{padding:14px 16px}.pill{display:none}main{padding:16px 12px}.grid{grid-template-columns:1fr}.row{gap:7px}.metrics{grid-template-columns:1fr}.metric{display:flex;justify-content:space-between;align-items:center}.drawing{max-height:400px}.intro h1{font-size:23px}}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' blob: data:; script-src 'self'; style-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>劦成｜A1 外印刷模板 V0.3</title>
+  <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-<header><div class="brand"><div class="mark">劦成</div><div><strong>紙箱印刷模板</strong><div class="sub">A1 可調式展開圖 · 部署預覽 0.2</div></div></div><span class="pill">獨立預覽・不連 ERP / Supabase</span></header>
-<main>
-<div class="intro"><h1>從尺寸，開始排版。</h1><p>這是獨立部署測試。先驗證展開框架與下載流程，不代表正式製版規格已認證。</p></div>
-<div id="err" class="error" hidden></div>
-<div class="grid">
-<section class="card controls">
-<div class="eyebrow">01 / 尺寸設定</div><h2>A1 外印刷模板</h2>
-<div class="row2"><label class="field"><span>案件代碼</span><input id="caseCode" value="XC-DEMO" maxlength="24"></label><label class="field"><span>版次</span><input id="rev" type="number" value="1" min="1" max="999"></label></div>
-<div class="sep"></div>
-<div class="row"><label class="field"><span>長 L · mm</span><input id="L" type="number" value="300" min="20" step=".1"></label><label class="field"><span>寬 W · mm</span><input id="W" type="number" value="180" min="20" step=".1"></label><label class="field"><span>高 H · mm</span><input id="H" type="number" value="200" min="20" step=".1"></label></div>
-<p class="hint">保留客戶標示尺寸，不自動判定內徑／外徑，也不自動做補償。</p>
-<label class="check"><input id="override" type="checkbox">本次排版尺寸不同</label>
-<div id="overrideBox" hidden><div class="row"><label class="field"><span>排版 L</span><input id="pL" type="number" value="300"></label><label class="field"><span>排版 W</span><input id="pW" type="number" value="180"></label><label class="field"><span>排版 H</span><input id="pH" type="number" value="200"></label></div></div>
-<div class="sep"></div>
-<label class="field"><span>左側接舌 G · mm</span><input id="G" type="number" value="30" min="0" step=".1"></label>
-<label class="check"><input id="auto" type="checkbox" checked>上下蓋先用「排版寬 ÷ 2」</label>
-<div class="row2"><label class="field"><span>上蓋 · mm</span><input id="top" type="number" value="90"></label><label class="field"><span>下蓋 · mm</span><input id="bottom" type="number" value="90"></label></div>
-<div class="warn"><strong>仍是排版參考。</strong><br>接舌、蓋深、面別與閱讀方向尚未凍結；不是生產刀模。</div>
-<div class="presets">
-<button class="btn preset" data-p="250,225,200">250×225×200</button>
-<button class="btn preset" data-p="380,300,310">380×300×310</button>
-<button class="btn preset" data-p="300,180,200">300×180×200</button>
-<button class="btn preset" data-p="200,200,200">200×200×200</button>
-<button class="btn preset" data-p="200,180,200,182">200×180×200 → W182</button>
-</div>
-</section>
-<section class="card">
-<div class="previewHead"><div><h2>外印刷展開圖</h2><p>畫面等比縮放；下載檔以 mm 建立。</p></div><span class="pill">DRAFT</span></div>
-<div id="drawing" class="drawing"></div>
-<div class="metrics"><div class="metric"><small>模板寬 × 高</small><strong id="total">—</strong></div><div class="metric"><small>四面配置</small><strong id="panels">—</strong></div><div class="metric"><small>箱身高度</small><strong id="bodyH">—</strong></div></div>
-<div class="actions">
-<button id="pdf" class="btn primary">下載 1:1 向量 PDF</button>
-<button id="svg" class="btn">下載 SVG</button>
-<button id="json" class="btn">保存案件 JSON</button>
-<button id="import" class="btn">匯入案件 JSON</button>
-<input id="file" type="file" accept=".json,application/json" hidden>
-</div>
-</section>
-</div>
-<footer>XC-A1-TEMPLATE / deploy-preview-0.2 · 獨立測試頁 · 不含原生 AI · 不含客戶圖稿 · 不寫入後端</footer>
-</main>
-<script>
-'use strict';
-const $=id=>document.getElementById(id),PT=72/25.4;
-const fmt=n=>Number(n.toFixed(3)).toString(),num=id=>Number($(id).value);
-function params(){
- const nominal={L:num('L'),W:num('W'),H:num('H')},ov=$('override').checked;
- const layout=ov?{L:num('pL'),W:num('pW'),H:num('pH')}:{...nominal},auto=$('auto').checked;
- return {nominal,layout,override:ov,G:num('G'),auto,top:auto?layout.W/2:num('top'),bottom:auto?layout.W/2:num('bottom'),caseCode:$('caseCode').value.trim()||'XC-DEMO',revision:num('rev')};
-}
-function valid(p){
- const e=[];for(const [k,v] of Object.entries({...p.nominal,...{pL:p.layout.L,pW:p.layout.W,pH:p.layout.H}}))if(!Number.isFinite(v)||v<20||v>1500)e.push(k+' 尺寸需為 20–1500 mm');
- if(!Number.isFinite(p.G)||p.G<0||p.G>150)e.push('接舌需為 0–150 mm');
- if(!Number.isFinite(p.top)||p.top<0||!Number.isFinite(p.bottom)||p.bottom<0)e.push('上下蓋尺寸不合法');
- if(!/^[A-Za-z0-9_-]{1,24}$/.test(p.caseCode))e.push('案件代碼限英數字、-、_');
- return e;
-}
-function geometry(p){
- const {L,W,H}=p.layout,G=p.G,T=p.top,B=p.bottom;
- const xs=[G,G+L,G+L+W,G+2*L+W,G+2*L+2*W],totalW=xs[4],totalH=T+H+B;
- return {xs,totalW,totalH,T,B,H,G};
-}
-function svgText(p,download=false){
- const g=geometry(p),ox=25,oy=30,pageW=g.totalW+50,pageH=g.totalH+70;
- const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
- let x='<svg xmlns="http://www.w3.org/2000/svg" width="'+pageW+'mm" height="'+pageH+'mm" viewBox="0 0 '+pageW+' '+pageH+'">';
- x+='<rect width="100%" height="100%" fill="white"/><g fill="none" stroke="#5e6964" stroke-width=".35">';
- x+='<path d="M'+(ox+g.G)+' '+oy+' H'+(ox+g.totalW)+' V'+(oy+g.totalH)+' H'+(ox+g.G)+' V'+(oy+g.T+g.H)+' H'+ox+' V'+(oy+g.T)+' H'+(ox+g.G)+' Z"/>';
- for(let i=1;i<4;i++)x+='<path d="M'+(ox+g.xs[i])+' '+oy+' V'+(oy+g.totalH)+'"/>';
- x+='<path d="M'+(ox+g.G)+' '+(oy+g.T)+' H'+(ox+g.totalW)+' M'+(ox+g.G)+' '+(oy+g.T+g.H)+' H'+(ox+g.totalW)+'"/>';
- if(g.G)x+='<path d="M'+(ox+g.G)+' '+(oy+g.T)+' V'+(oy+g.T+g.H)+'"/>';
- x+='</g><g font-family="Arial,sans-serif" fill="#6b7771" text-anchor="middle">';
- const widths=[p.layout.L,p.layout.W,p.layout.L,p.layout.W];
- for(let i=0;i<4;i++){const cx=ox+(g.xs[i]+g.xs[i+1])/2;x+='<text x="'+cx+'" y="'+(oy-8)+'" font-size="4">'+fmt(widths[i])+'</text>';x+='<text x="'+cx+'" y="'+(oy+g.T+g.H/2)+'" font-size="6">P'+(i+1)+' / '+(i%2?'W':'L')+'</text>';}
- x+='</g><g font-family="Arial,sans-serif" fill="#34423c"><text x="'+ox+'" y="12" font-size="4">XIECHENG / A1 PRINT LAYOUT / DRAFT</text><text x="'+ox+'" y="'+(oy+g.totalH+24)+'" font-size="3.5">'+esc(p.caseCode)+' R'+p.revision+' | NOMINAL '+fmt(p.nominal.L)+' x '+fmt(p.nominal.W)+' x '+fmt(p.nominal.H)+' | LAYOUT '+fmt(p.layout.L)+' x '+fmt(p.layout.W)+' x '+fmt(p.layout.H)+' mm</text></g>';
- x+='</svg>';return x;
-}
-function update(){
- const p=params();$('overrideBox').hidden=!p.override;
- if(!p.override){$('pL').value=p.nominal.L;$('pW').value=p.nominal.W;$('pH').value=p.nominal.H;}
- $('top').disabled=p.auto;$('bottom').disabled=p.auto;if(p.auto){$('top').value=fmt(p.top);$('bottom').value=fmt(p.bottom);}
- const e=valid(p);$('err').hidden=!e.length;$('err').textContent=e.join('；');
- if(e.length){$('drawing').innerHTML='';return;}
- const g=geometry(p);$('drawing').innerHTML=svgText(p);$('total').textContent=fmt(g.totalW)+' × '+fmt(g.totalH)+' mm';$('panels').textContent=[p.layout.L,p.layout.W,p.layout.L,p.layout.W].map(fmt).join(' / ');$('bodyH').textContent=fmt(p.layout.H)+' mm';
-}
-function dl(data,mime,name){const u=URL.createObjectURL(new Blob([data],{type:mime})),a=document.createElement('a');a.href=u;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(u),30000)}
-function base(p){return p.caseCode+'_R'+String(p.revision).padStart(3,'0')+'_A1_'+[p.nominal.L,p.nominal.W,p.nominal.H].map(fmt).join('x')+'_DRAFT'}
-function pdfBytes(p){
- const g=geometry(p),ox=25,oy=30,pw=g.totalW+50,ph=g.totalH+70;
- const seg=[];const L=(x1,y1,x2,y2)=>seg.push((x1*PT).toFixed(3)+' '+((ph-y1)*PT).toFixed(3)+' m '+(x2*PT).toFixed(3)+' '+((ph-y2)*PT).toFixed(3)+' l S');
- seg.push('0.35 G 0.8 w');
- const pts=[[g.G,0],[g.totalW,0],[g.totalW,g.totalH],[g.G,g.totalH],[g.G,g.T+g.H],[0,g.T+g.H],[0,g.T],[g.G,g.T],[g.G,0]];
- for(let i=0;i<pts.length-1;i++)L(ox+pts[i][0],oy+pts[i][1],ox+pts[i+1][0],oy+pts[i+1][1]);
- for(let i=1;i<4;i++)L(ox+g.xs[i],oy,ox+g.xs[i],oy+g.totalH);
- L(ox+g.G,oy+g.T,ox+g.totalW,oy+g.T);L(ox+g.G,oy+g.T+g.H,ox+g.totalW,oy+g.T+g.H);
- const stream=seg.join('\n')+'\n';
- const objs=[
- '<< /Type /Catalog /Pages 2 0 R >>',
- '<< /Type /Pages /Kids [3 0 R] /Count 1 >>',
- '<< /Type /Page /Parent 2 0 R /MediaBox [0 0 '+(pw*PT).toFixed(3)+' '+(ph*PT).toFixed(3)+'] /Contents 4 0 R >>',
- '<< /Length '+stream.length+' >>\nstream\n'+stream+'endstream'
- ];
- let pdf='%PDF-1.4\n',off=[0];objs.forEach((o,i)=>{off.push(pdf.length);pdf+=(i+1)+' 0 obj\n'+o+'\nendobj\n'});const xr=pdf.length;pdf+='xref\n0 5\n0000000000 65535 f \n'+off.slice(1).map(n=>String(n).padStart(10,'0')+' 00000 n \n').join('')+'trailer\n<< /Size 5 /Root 1 0 R >>\nstartxref\n'+xr+'\n%%EOF';return new TextEncoder().encode(pdf)
-}
-$('pdf').onclick=()=>{const p=params();if(!valid(p).length)dl(pdfBytes(p),'application/pdf',base(p)+'.pdf')};
-$('svg').onclick=()=>{const p=params();if(!valid(p).length)dl(svgText(p,true),'image/svg+xml',base(p)+'.svg')};
-$('json').onclick=()=>{const p=params();if(!valid(p).length)dl(JSON.stringify({schema:'xiecheng.a1.deploy-preview.v1',unit:'mm',parameters:p},null,2),'application/json',base(p)+'.json')};
-$('import').onclick=()=>{$('file').value='';$('file').click()};
-$('file').onchange=async()=>{try{const d=JSON.parse(await $('file').files[0].text()),p=d.parameters;if(!p)throw Error('格式錯誤');for(const k of ['L','W','H']){$(k).value=p.nominal[k];$('p'+k).value=p.layout[k]}$('override').checked=!!p.override;$('G').value=p.G;$('auto').checked=!!p.auto;$('top').value=p.top;$('bottom').value=p.bottom;$('caseCode').value=p.caseCode;$('rev').value=p.revision;update()}catch(e){$('err').hidden=false;$('err').textContent='匯入失敗：'+e.message}};
-document.querySelectorAll('input').forEach(x=>x.addEventListener('input',update));
-document.querySelectorAll('[data-p]').forEach(b=>b.onclick=()=>{const [L,W,H,ow]=b.dataset.p.split(',').map(Number);$('L').value=L;$('W').value=W;$('H').value=H;$('override').checked=!!ow;$('pL').value=L;$('pW').value=ow||W;$('pH').value=H;$('auto').checked=true;update()});
-update();
-</script>
-</body></html>
+  <header class="topbar">
+    <div class="brand">
+      <div class="mark">劦成</div>
+      <div><strong>紙箱印刷模板</strong><div class="sub">A1 外印刷展開圖 · Geometry Freeze V0.3</div></div>
+    </div>
+    <span class="pill">獨立預覽 · 不連 ERP / Supabase</span>
+  </header>
+
+  <main>
+    <div class="intro">
+      <div>
+        <p class="eyebrow">XIECHENG-A1-TEMPLATE-V03</p>
+        <h1>輸入長、寬、高，直接生成外印刷模板。</h1>
+        <p>四面順序 L / W / L / W，接舌固定 30.3 mm，上下蓋片由排版 W ÷ 2 自動計算。</p>
+      </div>
+      <span class="statusBadge">外印刷作圖模板 · 非生產刀模</span>
+    </div>
+
+    <div id="err" class="error" role="alert" hidden></div>
+
+    <div class="layoutGrid">
+      <section class="card controls" aria-labelledby="settings-title">
+        <p class="eyebrow">01 / 案件與尺寸</p>
+        <h2 id="settings-title">A1 外印刷模板</h2>
+
+        <div class="twoCol">
+          <label class="field"><span>案件代碼</span><input id="caseCode" value="XC-DEMO" maxlength="24" autocomplete="off"></label>
+          <label class="field"><span>版次</span><input id="revision" type="number" value="1" min="1" max="999" inputmode="numeric"></label>
+        </div>
+
+        <div class="separator"></div>
+
+        <fieldset>
+          <legend>Nominal 客戶原始尺寸 · mm</legend>
+          <div class="threeCol">
+            <label class="field"><span>長 L</span><input id="L" type="number" value="300" min="20" max="1500" step="0.1" inputmode="decimal"></label>
+            <label class="field"><span>寬 W</span><input id="W" type="number" value="180" min="20" max="1500" step="0.1" inputmode="decimal"></label>
+            <label class="field"><span>高 H</span><input id="H" type="number" value="200" min="20" max="1500" step="0.1" inputmode="decimal"></label>
+          </div>
+          <p class="hint">保留客戶原始尺寸，不自動判定內徑／外徑，不加入材質或生產補償。</p>
+        </fieldset>
+
+        <label class="toggleRow">
+          <input id="layoutOverride" type="checkbox">
+          <span><strong>本次排版尺寸不同</strong><small>同時保留 Nominal 與 Layout 尺寸</small></span>
+        </label>
+
+        <fieldset id="layoutOverrideBox" class="overrideBox" hidden>
+          <legend>Layout 本次排版尺寸 · mm</legend>
+          <div class="threeCol">
+            <label class="field"><span>Layout L</span><input id="layoutL" type="number" value="300" min="20" max="1500" step="0.1" inputmode="decimal"></label>
+            <label class="field"><span>Layout W</span><input id="layoutW" type="number" value="180" min="20" max="1500" step="0.1" inputmode="decimal"></label>
+            <label class="field"><span>Layout H</span><input id="layoutH" type="number" value="200" min="20" max="1500" step="0.1" inputmode="decimal"></label>
+          </div>
+        </fieldset>
+
+        <div class="fixedRules" aria-label="已凍結結構規則">
+          <div><span>接舌</span><strong>固定 30.3 mm</strong></div>
+          <div><span>上下蓋</span><strong>Layout W ÷ 2</strong></div>
+          <div><span>切槽</span><strong>Slot Style 01</strong></div>
+        </div>
+
+        <div class="notice"><strong>幾何規則已凍結。</strong><span>接舌斜切為未驗證樣式參數；本工具是客戶外印刷作圖模板，不是生產刀模 CAD。</span></div>
+
+        <div class="presets" aria-label="測試案例">
+          <button class="button preset" type="button" data-preset="250,225,200">250×225×200</button>
+          <button class="button preset" type="button" data-preset="380,300,310">380×300×310</button>
+          <button class="button preset" type="button" data-preset="300,180,200">300×180×200</button>
+          <button class="button preset" type="button" data-preset="200,200,200">200×200×200</button>
+          <button class="button preset" type="button" data-preset="450,300,300">450×300×300</button>
+          <button class="button preset" type="button" data-preset="200,180,200,200,182,200">Nominal 200×180×200 → Layout W182</button>
+        </div>
+      </section>
+
+      <section class="card previewCard" aria-labelledby="preview-title">
+        <div class="previewHeader">
+          <div>
+            <p class="eyebrow">02 / CANONICAL GEOMETRY</p>
+            <h2 id="preview-title">外印刷展開圖</h2>
+            <p>畫面等比縮放；SVG 與 PDF 共用同一份 scene，下載檔以 mm 建立。</p>
+          </div>
+          <span class="statusBadge">SLOT STYLE 01</span>
+        </div>
+
+        <div class="legend" aria-label="圖層圖例">
+          <span><i class="line outline"></i>外框／接舌</span>
+          <span><i class="line crease"></i>壓線參考</span>
+          <span><i class="line slot"></i>切槽參考</span>
+        </div>
+
+        <div id="drawing" class="drawing" aria-live="polite"></div>
+
+        <div class="metrics">
+          <div class="metric"><small>模板總尺寸</small><strong id="totalSize">—</strong></div>
+          <div class="metric"><small>四面配置</small><strong id="panelSizes">—</strong></div>
+          <div class="metric"><small>蓋片／箱身／蓋片</small><strong id="verticalSizes">—</strong></div>
+          <div class="metric"><small>Nominal</small><strong id="nominalSize">—</strong></div>
+          <div class="metric"><small>Layout</small><strong id="layoutSize">—</strong></div>
+          <div class="metric"><small>接舌</small><strong>30.3 mm</strong></div>
+        </div>
+
+        <div class="actions">
+          <button id="downloadPdf" class="button primary" type="button">下載 1:1 向量 PDF</button>
+          <button id="downloadSvg" class="button" type="button">下載 SVG</button>
+          <button id="downloadJson" class="button" type="button">保存案件 JSON</button>
+          <button id="importJson" class="button" type="button">匯入案件 JSON</button>
+          <input id="jsonFile" type="file" accept=".json,application/json" hidden>
+        </div>
+
+        <div class="nextStage"><span>AI 原生檔</span><strong>下一階段</strong><small>尚未進行 Illustrator round-trip 與 1:1 尺寸復驗。</small></div>
+      </section>
+    </div>
+
+    <footer>XC-A1-TEMPLATE / V0.3 · 獨立測試頁 · 不含原生 AI · 不含客戶圖稿 · 無後端或外部資料傳輸</footer>
+  </main>
+
+  <script type="module" src="./app.mjs"></script>
+</body>
+</html>

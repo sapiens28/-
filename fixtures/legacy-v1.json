@@ -1,0 +1,14 @@
+{
+  "schema": "xiecheng.a1.deploy-preview.v1",
+  "parameters": {
+    "caseCode": "LEGACY-01",
+    "revision": 2,
+    "nominal": { "L": 200, "W": 180, "H": 200 },
+    "layout": { "L": 200, "W": 182, "H": 200 },
+    "override": true,
+    "G": 55,
+    "auto": false,
+    "top": 25,
+    "bottom": 40
+  }
+}
