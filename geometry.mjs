@@ -148,9 +148,10 @@ export function buildScene(caseData) {
 
   layers.NOTES.items.push(
     text(origin.x, 12, 'XIECHENG / A1 PRINT LAYOUT / SLOT STYLE 01', { fontSize: 4.2 }),
-    text(origin.x, origin.y + totalH + 16, `${caseData.caseCode} R${caseData.revision} | NOMINAL ${dimensionText(caseData.nominal)} | LAYOUT ${dimensionText(caseData.layout)} mm`),
-    text(origin.x, origin.y + totalH + 23, `TOTAL ${formatMm(totalW)} x ${formatMm(totalH)} mm | G ${formatMm(G)} | FLAPS ${formatMm(T)} / ${formatMm(B)}`),
-    text(origin.x, origin.y + totalH + 30, `${GEOMETRY_STATUS} | GLUE SLOPE ${SLOT_STYLE_01_INTERNAL_PARAMETER.verificationStatus}`),
+    text(origin.x, origin.y + totalH + 9, `CASE ${caseData.caseCode} | REVISION R${caseData.revision} | NOMINAL ${dimensionText(caseData.nominal)} mm | LAYOUT ${dimensionText(caseData.layout)} mm`),
+    text(origin.x, origin.y + totalH + 16, `GLUE FLAP ${formatMm(G)} mm | TOP / BOTTOM RULE LAYOUT W / 2 | SLOT STYLE ${SLOT_STYLE}`),
+    text(origin.x, origin.y + totalH + 23, `TOTAL ${formatMm(totalW)} x ${formatMm(totalH)} mm | FLAPS ${formatMm(T)} / ${formatMm(B)} mm | GLUE SLOPE ${SLOT_STYLE_01_INTERNAL_PARAMETER.verificationStatus}`),
+    text(origin.x, origin.y + totalH + 30, `REFERENCE / CUSTOMER ARTWORK TEMPLATE | NOT PRODUCTION DIELINE | ${GEOMETRY_STATUS}`),
   );
 
   return {

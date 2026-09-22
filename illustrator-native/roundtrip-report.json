@@ -1,0 +1,1498 @@
+{
+  "schema": "xiecheng.a1.illustrator-roundtrip.v1",
+  "illustratorVersion": "29.7.1",
+  "cases": [
+    {
+      "id": "CASE_01",
+      "filePath": "C:/Users/ASUS/Documents/ChatGPT/劦成/a1-template-v03/illustrator-native/XC-AI-CASE01_R001_A1_300x180x200_ARTWORK_TEMPLATE.ai",
+      "documentColorSpace": "CMYK",
+      "cmykDocument": true,
+      "rulerUnits": "RulerUnits.Points",
+      "rasterEffectsPpi": 300,
+      "rasterEffectsSet": true,
+      "artboardMm": {
+        "left": 0,
+        "top": 0,
+        "right": 1040.3,
+        "bottom": -450,
+        "width": 1040.3,
+        "height": 450
+      },
+      "placedItems": 0,
+      "rasterItems": 0,
+      "layers": [
+        {
+          "index": 0,
+          "name": "01_ARTWORK",
+          "visible": true,
+          "locked": false,
+          "pathCount": 0,
+          "textCount": 0
+        },
+        {
+          "index": 1,
+          "name": "02_REFERENCE_OUTLINE",
+          "visible": true,
+          "locked": true,
+          "pathCount": 5,
+          "textCount": 0
+        },
+        {
+          "index": 2,
+          "name": "03_CREASE_REFERENCE",
+          "visible": true,
+          "locked": true,
+          "pathCount": 6,
+          "textCount": 0
+        },
+        {
+          "index": 3,
+          "name": "04_SLOT_CUT_REFERENCE",
+          "visible": true,
+          "locked": true,
+          "pathCount": 6,
+          "textCount": 0
+        },
+        {
+          "index": 4,
+          "name": "05_GLUE_TAB",
+          "visible": true,
+          "locked": true,
+          "pathCount": 3,
+          "textCount": 0
+        },
+        {
+          "index": 5,
+          "name": "06_DIMENSIONS",
+          "visible": true,
+          "locked": true,
+          "pathCount": 0,
+          "textCount": 9
+        },
+        {
+          "index": 6,
+          "name": "07_FACE_IDS",
+          "visible": true,
+          "locked": true,
+          "pathCount": 0,
+          "textCount": 4
+        },
+        {
+          "index": 7,
+          "name": "08_NOTES",
+          "visible": true,
+          "locked": true,
+          "pathCount": 0,
+          "textCount": 5
+        }
+      ],
+      "paths": [
+        {
+          "layer": "02_REFERENCE_OUTLINE",
+          "name": "segment_4",
+          "anchors": [
+            {
+              "x": 55.3,
+              "y": 118
+            },
+            {
+              "x": 55.3,
+              "y": 28
+            }
+          ],
+          "editable": true
+        },
+        {
+          "layer": "02_REFERENCE_OUTLINE",
+          "name": "segment_3",
+          "anchors": [
+            {
+              "x": 55.3,
+              "y": 408
+            },
+            {
+              "x": 55.3,
+              "y": 318
+            }
+          ],
+          "editable": true
+        },
+        {
+          "layer": "02_REFERENCE_OUTLINE",
+          "name": "segment_2",
+          "anchors": [
+            {
+              "x": 1015.3,
+              "y": 408
+            },
+            {
+              "x": 55.3,
+              "y": 408
+            }
+          ],
+          "editable": true
+        },
+        {
+          "layer": "02_REFERENCE_OUTLINE",
+          "name": "segment_1",
+          "anchors": [
+            {
+              "x": 1015.3,
+              "y": 28
+            },
+            {
+              "x": 1015.3,
+              "y": 408
+            }
+          ],
+          "editable": true
+        },
+        {
+          "layer": "02_REFERENCE_OUTLINE",
+          "name": "segment_0",
+          "anchors": [
+            {
+              "x": 55.3,
+              "y": 28
+            },
+            {
+              "x": 1015.3,
+              "y": 28
+            }
+          ],
+          "editable": true
+        },
+        {
+          "layer": "03_CREASE_REFERENCE",
+          "name": "segment_5",
+          "anchors": [
+            {
+              "x": 835.3,
+              "y": 118
+            },
+            {
+              "x": 835.3,
+              "y": 318
+            }
+          ],
+          "editable": true
+        },
+        {
+          "layer": "03_CREASE_REFERENCE",
+          "name": "segment_4",
+          "anchors": [
+            {
+              "x": 535.3,
+              "y": 118
+            },
+            {
+              "x": 535.3,
+              "y": 318
+            }
+          ],
+          "editable": true
+        },
+        {
+          "layer": "03_CREASE_REFERENCE",
+          "name": "segment_3",
+          "anchors": [
+            {
+              "x": 355.3,
+              "y": 118
+            },
+            {
+              "x": 355.3,
+              "y": 318
+            }
+          ],
+          "editable": true
+        },
+        {
+          "layer": "03_CREASE_REFERENCE",
+          "name": "segment_2",
+          "anchors": [
+            {
+              "x": 55.3,
+              "y": 118
+            },
+            {
+              "x": 55.3,
+              "y": 318
+            }
+          ],
+          "editable": true
+        },
+        {
+          "layer": "03_CREASE_REFERENCE",
+          "name": "segment_1",
+          "anchors": [
+            {
+              "x": 55.3,
+              "y": 318
+            },
+            {
+              "x": 1015.3,
+              "y": 318
+            }
+          ],
+          "editable": true
+        },
+        {
+          "layer": "03_CREASE_REFERENCE",
+          "name": "segment_0",
+          "anchors": [
+            {
+              "x": 55.3,
+              "y": 118
+            },
+            {
+              "x": 1015.3,
+              "y": 118
+            }
+          ],
+          "editable": true
+        },
+        {
+          "layer": "04_SLOT_CUT_REFERENCE",
+          "name": "segment_5",
+          "anchors": [
+            {
+              "x": 835.3,
+              "y": 318
+            },
+            {
+              "x": 835.3,
+              "y": 408
+            }
+          ],
+          "editable": true
+        },
+        {
+          "layer": "04_SLOT_CUT_REFERENCE",
+          "name": "segment_4",
+          "anchors": [
+            {
+              "x": 835.3,
+              "y": 28
+            },
+            {
+              "x": 835.3,
+              "y": 118
+            }
+          ],
+          "editable": true
+        },
+        {
+          "layer": "04_SLOT_CUT_REFERENCE",
+          "name": "segment_3",
+          "anchors": [
+            {
+              "x": 535.3,
+              "y": 318
+            },
+            {
+              "x": 535.3,
+              "y": 408
+            }
+          ],
+          "editable": true
+        },
+        {
+          "layer": "04_SLOT_CUT_REFERENCE",
+          "name": "segment_2",
+          "anchors": [
+            {
+              "x": 535.3,
+              "y": 28
+            },
+            {
+              "x": 535.3,
+              "y": 118
+            }
+          ],
+          "editable": true
+        },
+        {
+          "layer": "04_SLOT_CUT_REFERENCE",
+          "name": "segment_1",
+          "anchors": [
+            {
+              "x": 355.3,
+              "y": 318
+            },
+            {
+              "x": 355.3,
+              "y": 408
+            }
+          ],
+          "editable": true
+        },
+        {
+          "layer": "04_SLOT_CUT_REFERENCE",
+          "name": "segment_0",
+          "anchors": [
+            {
+              "x": 355.3,
+              "y": 28
+            },
+            {
+              "x": 355.3,
+              "y": 118
+            }
+          ],
+          "editable": true
+        },
+        {
+          "layer": "05_GLUE_TAB",
+          "name": "segment_2",
+          "anchors": [
+            {
+              "x": 25,
+              "y": 310
+            },
+            {
+              "x": 55.3,
+              "y": 318
+            }
+          ],
+          "editable": true
+        },
+        {
+          "layer": "05_GLUE_TAB",
+          "name": "segment_1",
+          "anchors": [
+            {
+              "x": 25,
+              "y": 126
+            },
+            {
+              "x": 25,
+              "y": 310
+            }
+          ],
+          "editable": true
+        },
+        {
+          "layer": "05_GLUE_TAB",
+          "name": "segment_0",
+          "anchors": [
+            {
+              "x": 55.3,
+              "y": 118
+            },
+            {
+              "x": 25,
+              "y": 126
+            }
+          ],
+          "editable": true
+        }
+      ],
+      "texts": [
+        {
+          "layer": "06_DIMENSIONS",
+          "name": "text_8",
+          "contents": "G 30.3",
+          "editable": true
+        },
+        {
+          "layer": "06_DIMENSIONS",
+          "name": "text_7",
+          "contents": "B4  180 x 90",
+          "editable": true
+        },
+        {
+          "layer": "06_DIMENSIONS",
+          "name": "text_6",
+          "contents": "T4  180 x 90",
+          "editable": true
+        },
+        {
+          "layer": "06_DIMENSIONS",
+          "name": "text_5",
+          "contents": "B3  300 x 90",
+          "editable": true
+        },
+        {
+          "layer": "06_DIMENSIONS",
+          "name": "text_4",
+          "contents": "T3  300 x 90",
+          "editable": true
+        },
+        {
+          "layer": "06_DIMENSIONS",
+          "name": "text_3",
+          "contents": "B2  180 x 90",
+          "editable": true
+        },
+        {
+          "layer": "06_DIMENSIONS",
+          "name": "text_2",
+          "contents": "T2  180 x 90",
+          "editable": true
+        },
+        {
+          "layer": "06_DIMENSIONS",
+          "name": "text_1",
+          "contents": "B1  300 x 90",
+          "editable": true
+        },
+        {
+          "layer": "06_DIMENSIONS",
+          "name": "text_0",
+          "contents": "T1  300 x 90",
+          "editable": true
+        },
+        {
+          "layer": "07_FACE_IDS",
+          "name": "text_3",
+          "contents": "P4 / W / 180",
+          "editable": true
+        },
+        {
+          "layer": "07_FACE_IDS",
+          "name": "text_2",
+          "contents": "P3 / L / 300",
+          "editable": true
+        },
+        {
+          "layer": "07_FACE_IDS",
+          "name": "text_1",
+          "contents": "P2 / W / 180",
+          "editable": true
+        },
+        {
+          "layer": "07_FACE_IDS",
+          "name": "text_0",
+          "contents": "P1 / L / 300",
+          "editable": true
+        },
+        {
+          "layer": "08_NOTES",
+          "name": "text_4",
+          "contents": "REFERENCE / CUSTOMER ARTWORK TEMPLATE | NOT PRODUCTION DIELINE | UNVERIFIED_PRINT_LAYOUT_TEMPLATE",
+          "editable": true
+        },
+        {
+          "layer": "08_NOTES",
+          "name": "text_3",
+          "contents": "TOTAL 990.3 x 380 mm | FLAPS 90 / 90 mm | GLUE SLOPE UNVERIFIED_STYLE_PARAMETER",
+          "editable": true
+        },
+        {
+          "layer": "08_NOTES",
+          "name": "text_2",
+          "contents": "GLUE FLAP 30.3 mm | TOP / BOTTOM RULE LAYOUT W / 2 | SLOT STYLE XIECHENG_SLOT_STYLE_01",
+          "editable": true
+        },
+        {
+          "layer": "08_NOTES",
+          "name": "text_1",
+          "contents": "CASE XC-AI-CASE01 | REVISION R1 | NOMINAL 300 x 180 x 200 mm | LAYOUT 300 x 180 x 200 mm",
+          "editable": true
+        },
+        {
+          "layer": "08_NOTES",
+          "name": "text_0",
+          "contents": "XIECHENG / A1 PRINT LAYOUT / SLOT STYLE 01",
+          "editable": true
+        }
+      ]
+    },
+    {
+      "id": "CASE_02",
+      "filePath": "C:/Users/ASUS/Documents/ChatGPT/劦成/a1-template-v03/illustrator-native/XC-AI-CASE02_R001_A1_450x300x300_ARTWORK_TEMPLATE.ai",
+      "documentColorSpace": "CMYK",
+      "cmykDocument": true,
+      "rulerUnits": "RulerUnits.Points",
+      "rasterEffectsPpi": 300,
+      "rasterEffectsSet": true,
+      "artboardMm": {
+        "left": 0,
+        "top": 0,
+        "right": 1580.3,
+        "bottom": -670,
+        "width": 1580.3,
+        "height": 670
+      },
+      "placedItems": 0,
+      "rasterItems": 0,
+      "layers": [
+        {
+          "index": 0,
+          "name": "01_ARTWORK",
+          "visible": true,
+          "locked": false,
+          "pathCount": 0,
+          "textCount": 0
+        },
+        {
+          "index": 1,
+          "name": "02_REFERENCE_OUTLINE",
+          "visible": true,
+          "locked": true,
+          "pathCount": 5,
+          "textCount": 0
+        },
+        {
+          "index": 2,
+          "name": "03_CREASE_REFERENCE",
+          "visible": true,
+          "locked": true,
+          "pathCount": 6,
+          "textCount": 0
+        },
+        {
+          "index": 3,
+          "name": "04_SLOT_CUT_REFERENCE",
+          "visible": true,
+          "locked": true,
+          "pathCount": 6,
+          "textCount": 0
+        },
+        {
+          "index": 4,
+          "name": "05_GLUE_TAB",
+          "visible": true,
+          "locked": true,
+          "pathCount": 3,
+          "textCount": 0
+        },
+        {
+          "index": 5,
+          "name": "06_DIMENSIONS",
+          "visible": true,
+          "locked": true,
+          "pathCount": 0,
+          "textCount": 9
+        },
+        {
+          "index": 6,
+          "name": "07_FACE_IDS",
+          "visible": true,
+          "locked": true,
+          "pathCount": 0,
+          "textCount": 4
+        },
+        {
+          "index": 7,
+          "name": "08_NOTES",
+          "visible": true,
+          "locked": true,
+          "pathCount": 0,
+          "textCount": 5
+        }
+      ],
+      "paths": [
+        {
+          "layer": "02_REFERENCE_OUTLINE",
+          "name": "segment_4",
+          "anchors": [
+            {
+              "x": 55.3,
+              "y": 178
+            },
+            {
+              "x": 55.3,
+              "y": 28
+            }
+          ],
+          "editable": true
+        },
+        {
+          "layer": "02_REFERENCE_OUTLINE",
+          "name": "segment_3",
+          "anchors": [
+            {
+              "x": 55.3,
+              "y": 628
+            },
+            {
+              "x": 55.3,
+              "y": 478
+            }
+          ],
+          "editable": true
+        },
+        {
+          "layer": "02_REFERENCE_OUTLINE",
+          "name": "segment_2",
+          "anchors": [
+            {
+              "x": 1555.3,
+              "y": 628
+            },
+            {
+              "x": 55.3,
+              "y": 628
+            }
+          ],
+          "editable": true
+        },
+        {
+          "layer": "02_REFERENCE_OUTLINE",
+          "name": "segment_1",
+          "anchors": [
+            {
+              "x": 1555.3,
+              "y": 28
+            },
+            {
+              "x": 1555.3,
+              "y": 628
+            }
+          ],
+          "editable": true
+        },
+        {
+          "layer": "02_REFERENCE_OUTLINE",
+          "name": "segment_0",
+          "anchors": [
+            {
+              "x": 55.3,
+              "y": 28
+            },
+            {
+              "x": 1555.3,
+              "y": 28
+            }
+          ],
+          "editable": true
+        },
+        {
+          "layer": "03_CREASE_REFERENCE",
+          "name": "segment_5",
+          "anchors": [
+            {
+              "x": 1255.3,
+              "y": 178
+            },
+            {
+              "x": 1255.3,
+              "y": 478
+            }
+          ],
+          "editable": true
+        },
+        {
+          "layer": "03_CREASE_REFERENCE",
+          "name": "segment_4",
+          "anchors": [
+            {
+              "x": 805.3,
+              "y": 178
+            },
+            {
+              "x": 805.3,
+              "y": 478
+            }
+          ],
+          "editable": true
+        },
+        {
+          "layer": "03_CREASE_REFERENCE",
+          "name": "segment_3",
+          "anchors": [
+            {
+              "x": 505.3,
+              "y": 178
+            },
+            {
+              "x": 505.3,
+              "y": 478
+            }
+          ],
+          "editable": true
+        },
+        {
+          "layer": "03_CREASE_REFERENCE",
+          "name": "segment_2",
+          "anchors": [
+            {
+              "x": 55.3,
+              "y": 178
+            },
+            {
+              "x": 55.3,
+              "y": 478
+            }
+          ],
+          "editable": true
+        },
+        {
+          "layer": "03_CREASE_REFERENCE",
+          "name": "segment_1",
+          "anchors": [
+            {
+              "x": 55.3,
+              "y": 478
+            },
+            {
+              "x": 1555.3,
+              "y": 478
+            }
+          ],
+          "editable": true
+        },
+        {
+          "layer": "03_CREASE_REFERENCE",
+          "name": "segment_0",
+          "anchors": [
+            {
+              "x": 55.3,
+              "y": 178
+            },
+            {
+              "x": 1555.3,
+              "y": 178
+            }
+          ],
+          "editable": true
+        },
+        {
+          "layer": "04_SLOT_CUT_REFERENCE",
+          "name": "segment_5",
+          "anchors": [
+            {
+              "x": 1255.3,
+              "y": 478
+            },
+            {
+              "x": 1255.3,
+              "y": 628
+            }
+          ],
+          "editable": true
+        },
+        {
+          "layer": "04_SLOT_CUT_REFERENCE",
+          "name": "segment_4",
+          "anchors": [
+            {
+              "x": 1255.3,
+              "y": 28
+            },
+            {
+              "x": 1255.3,
+              "y": 178
+            }
+          ],
+          "editable": true
+        },
+        {
+          "layer": "04_SLOT_CUT_REFERENCE",
+          "name": "segment_3",
+          "anchors": [
+            {
+              "x": 805.3,
+              "y": 478
+            },
+            {
+              "x": 805.3,
+              "y": 628
+            }
+          ],
+          "editable": true
+        },
+        {
+          "layer": "04_SLOT_CUT_REFERENCE",
+          "name": "segment_2",
+          "anchors": [
+            {
+              "x": 805.3,
+              "y": 28
+            },
+            {
+              "x": 805.3,
+              "y": 178
+            }
+          ],
+          "editable": true
+        },
+        {
+          "layer": "04_SLOT_CUT_REFERENCE",
+          "name": "segment_1",
+          "anchors": [
+            {
+              "x": 505.3,
+              "y": 478
+            },
+            {
+              "x": 505.3,
+              "y": 628
+            }
+          ],
+          "editable": true
+        },
+        {
+          "layer": "04_SLOT_CUT_REFERENCE",
+          "name": "segment_0",
+          "anchors": [
+            {
+              "x": 505.3,
+              "y": 28
+            },
+            {
+              "x": 505.3,
+              "y": 178
+            }
+          ],
+          "editable": true
+        },
+        {
+          "layer": "05_GLUE_TAB",
+          "name": "segment_2",
+          "anchors": [
+            {
+              "x": 25,
+              "y": 470
+            },
+            {
+              "x": 55.3,
+              "y": 478
+            }
+          ],
+          "editable": true
+        },
+        {
+          "layer": "05_GLUE_TAB",
+          "name": "segment_1",
+          "anchors": [
+            {
+              "x": 25,
+              "y": 186
+            },
+            {
+              "x": 25,
+              "y": 470
+            }
+          ],
+          "editable": true
+        },
+        {
+          "layer": "05_GLUE_TAB",
+          "name": "segment_0",
+          "anchors": [
+            {
+              "x": 55.3,
+              "y": 178
+            },
+            {
+              "x": 25,
+              "y": 186
+            }
+          ],
+          "editable": true
+        }
+      ],
+      "texts": [
+        {
+          "layer": "06_DIMENSIONS",
+          "name": "text_8",
+          "contents": "G 30.3",
+          "editable": true
+        },
+        {
+          "layer": "06_DIMENSIONS",
+          "name": "text_7",
+          "contents": "B4  300 x 150",
+          "editable": true
+        },
+        {
+          "layer": "06_DIMENSIONS",
+          "name": "text_6",
+          "contents": "T4  300 x 150",
+          "editable": true
+        },
+        {
+          "layer": "06_DIMENSIONS",
+          "name": "text_5",
+          "contents": "B3  450 x 150",
+          "editable": true
+        },
+        {
+          "layer": "06_DIMENSIONS",
+          "name": "text_4",
+          "contents": "T3  450 x 150",
+          "editable": true
+        },
+        {
+          "layer": "06_DIMENSIONS",
+          "name": "text_3",
+          "contents": "B2  300 x 150",
+          "editable": true
+        },
+        {
+          "layer": "06_DIMENSIONS",
+          "name": "text_2",
+          "contents": "T2  300 x 150",
+          "editable": true
+        },
+        {
+          "layer": "06_DIMENSIONS",
+          "name": "text_1",
+          "contents": "B1  450 x 150",
+          "editable": true
+        },
+        {
+          "layer": "06_DIMENSIONS",
+          "name": "text_0",
+          "contents": "T1  450 x 150",
+          "editable": true
+        },
+        {
+          "layer": "07_FACE_IDS",
+          "name": "text_3",
+          "contents": "P4 / W / 300",
+          "editable": true
+        },
+        {
+          "layer": "07_FACE_IDS",
+          "name": "text_2",
+          "contents": "P3 / L / 450",
+          "editable": true
+        },
+        {
+          "layer": "07_FACE_IDS",
+          "name": "text_1",
+          "contents": "P2 / W / 300",
+          "editable": true
+        },
+        {
+          "layer": "07_FACE_IDS",
+          "name": "text_0",
+          "contents": "P1 / L / 450",
+          "editable": true
+        },
+        {
+          "layer": "08_NOTES",
+          "name": "text_4",
+          "contents": "REFERENCE / CUSTOMER ARTWORK TEMPLATE | NOT PRODUCTION DIELINE | UNVERIFIED_PRINT_LAYOUT_TEMPLATE",
+          "editable": true
+        },
+        {
+          "layer": "08_NOTES",
+          "name": "text_3",
+          "contents": "TOTAL 1530.3 x 600 mm | FLAPS 150 / 150 mm | GLUE SLOPE UNVERIFIED_STYLE_PARAMETER",
+          "editable": true
+        },
+        {
+          "layer": "08_NOTES",
+          "name": "text_2",
+          "contents": "GLUE FLAP 30.3 mm | TOP / BOTTOM RULE LAYOUT W / 2 | SLOT STYLE XIECHENG_SLOT_STYLE_01",
+          "editable": true
+        },
+        {
+          "layer": "08_NOTES",
+          "name": "text_1",
+          "contents": "CASE XC-AI-CASE02 | REVISION R1 | NOMINAL 450 x 300 x 300 mm | LAYOUT 450 x 300 x 300 mm",
+          "editable": true
+        },
+        {
+          "layer": "08_NOTES",
+          "name": "text_0",
+          "contents": "XIECHENG / A1 PRINT LAYOUT / SLOT STYLE 01",
+          "editable": true
+        }
+      ]
+    },
+    {
+      "id": "CASE_03",
+      "filePath": "C:/Users/ASUS/Documents/ChatGPT/劦成/a1-template-v03/illustrator-native/XC-AI-CASE03_R001_A1_N200x180x200_P200x182x200_ARTWORK_TEMPLATE.ai",
+      "documentColorSpace": "CMYK",
+      "cmykDocument": true,
+      "rulerUnits": "RulerUnits.Points",
+      "rasterEffectsPpi": 300,
+      "rasterEffectsSet": true,
+      "artboardMm": {
+        "left": 0,
+        "top": 0,
+        "right": 844.3,
+        "bottom": -452,
+        "width": 844.3,
+        "height": 452
+      },
+      "placedItems": 0,
+      "rasterItems": 0,
+      "layers": [
+        {
+          "index": 0,
+          "name": "01_ARTWORK",
+          "visible": true,
+          "locked": false,
+          "pathCount": 0,
+          "textCount": 0
+        },
+        {
+          "index": 1,
+          "name": "02_REFERENCE_OUTLINE",
+          "visible": true,
+          "locked": true,
+          "pathCount": 5,
+          "textCount": 0
+        },
+        {
+          "index": 2,
+          "name": "03_CREASE_REFERENCE",
+          "visible": true,
+          "locked": true,
+          "pathCount": 6,
+          "textCount": 0
+        },
+        {
+          "index": 3,
+          "name": "04_SLOT_CUT_REFERENCE",
+          "visible": true,
+          "locked": true,
+          "pathCount": 6,
+          "textCount": 0
+        },
+        {
+          "index": 4,
+          "name": "05_GLUE_TAB",
+          "visible": true,
+          "locked": true,
+          "pathCount": 3,
+          "textCount": 0
+        },
+        {
+          "index": 5,
+          "name": "06_DIMENSIONS",
+          "visible": true,
+          "locked": true,
+          "pathCount": 0,
+          "textCount": 9
+        },
+        {
+          "index": 6,
+          "name": "07_FACE_IDS",
+          "visible": true,
+          "locked": true,
+          "pathCount": 0,
+          "textCount": 4
+        },
+        {
+          "index": 7,
+          "name": "08_NOTES",
+          "visible": true,
+          "locked": true,
+          "pathCount": 0,
+          "textCount": 5
+        }
+      ],
+      "paths": [
+        {
+          "layer": "02_REFERENCE_OUTLINE",
+          "name": "segment_4",
+          "anchors": [
+            {
+              "x": 55.3,
+              "y": 119
+            },
+            {
+              "x": 55.3,
+              "y": 28
+            }
+          ],
+          "editable": true
+        },
+        {
+          "layer": "02_REFERENCE_OUTLINE",
+          "name": "segment_3",
+          "anchors": [
+            {
+              "x": 55.3,
+              "y": 410
+            },
+            {
+              "x": 55.3,
+              "y": 319
+            }
+          ],
+          "editable": true
+        },
+        {
+          "layer": "02_REFERENCE_OUTLINE",
+          "name": "segment_2",
+          "anchors": [
+            {
+              "x": 819.3,
+              "y": 410
+            },
+            {
+              "x": 55.3,
+              "y": 410
+            }
+          ],
+          "editable": true
+        },
+        {
+          "layer": "02_REFERENCE_OUTLINE",
+          "name": "segment_1",
+          "anchors": [
+            {
+              "x": 819.3,
+              "y": 28
+            },
+            {
+              "x": 819.3,
+              "y": 410
+            }
+          ],
+          "editable": true
+        },
+        {
+          "layer": "02_REFERENCE_OUTLINE",
+          "name": "segment_0",
+          "anchors": [
+            {
+              "x": 55.3,
+              "y": 28
+            },
+            {
+              "x": 819.3,
+              "y": 28
+            }
+          ],
+          "editable": true
+        },
+        {
+          "layer": "03_CREASE_REFERENCE",
+          "name": "segment_5",
+          "anchors": [
+            {
+              "x": 637.3,
+              "y": 119
+            },
+            {
+              "x": 637.3,
+              "y": 319
+            }
+          ],
+          "editable": true
+        },
+        {
+          "layer": "03_CREASE_REFERENCE",
+          "name": "segment_4",
+          "anchors": [
+            {
+              "x": 437.3,
+              "y": 119
+            },
+            {
+              "x": 437.3,
+              "y": 319
+            }
+          ],
+          "editable": true
+        },
+        {
+          "layer": "03_CREASE_REFERENCE",
+          "name": "segment_3",
+          "anchors": [
+            {
+              "x": 255.3,
+              "y": 119
+            },
+            {
+              "x": 255.3,
+              "y": 319
+            }
+          ],
+          "editable": true
+        },
+        {
+          "layer": "03_CREASE_REFERENCE",
+          "name": "segment_2",
+          "anchors": [
+            {
+              "x": 55.3,
+              "y": 119
+            },
+            {
+              "x": 55.3,
+              "y": 319
+            }
+          ],
+          "editable": true
+        },
+        {
+          "layer": "03_CREASE_REFERENCE",
+          "name": "segment_1",
+          "anchors": [
+            {
+              "x": 55.3,
+              "y": 319
+            },
+            {
+              "x": 819.3,
+              "y": 319
+            }
+          ],
+          "editable": true
+        },
+        {
+          "layer": "03_CREASE_REFERENCE",
+          "name": "segment_0",
+          "anchors": [
+            {
+              "x": 55.3,
+              "y": 119
+            },
+            {
+              "x": 819.3,
+              "y": 119
+            }
+          ],
+          "editable": true
+        },
+        {
+          "layer": "04_SLOT_CUT_REFERENCE",
+          "name": "segment_5",
+          "anchors": [
+            {
+              "x": 637.3,
+              "y": 319
+            },
+            {
+              "x": 637.3,
+              "y": 410
+            }
+          ],
+          "editable": true
+        },
+        {
+          "layer": "04_SLOT_CUT_REFERENCE",
+          "name": "segment_4",
+          "anchors": [
+            {
+              "x": 637.3,
+              "y": 28
+            },
+            {
+              "x": 637.3,
+              "y": 119
+            }
+          ],
+          "editable": true
+        },
+        {
+          "layer": "04_SLOT_CUT_REFERENCE",
+          "name": "segment_3",
+          "anchors": [
+            {
+              "x": 437.3,
+              "y": 319
+            },
+            {
+              "x": 437.3,
+              "y": 410
+            }
+          ],
+          "editable": true
+        },
+        {
+          "layer": "04_SLOT_CUT_REFERENCE",
+          "name": "segment_2",
+          "anchors": [
+            {
+              "x": 437.3,
+              "y": 28
+            },
+            {
+              "x": 437.3,
+              "y": 119
+            }
+          ],
+          "editable": true
+        },
+        {
+          "layer": "04_SLOT_CUT_REFERENCE",
+          "name": "segment_1",
+          "anchors": [
+            {
+              "x": 255.3,
+              "y": 319
+            },
+            {
+              "x": 255.3,
+              "y": 410
+            }
+          ],
+          "editable": true
+        },
+        {
+          "layer": "04_SLOT_CUT_REFERENCE",
+          "name": "segment_0",
+          "anchors": [
+            {
+              "x": 255.3,
+              "y": 28
+            },
+            {
+              "x": 255.3,
+              "y": 119
+            }
+          ],
+          "editable": true
+        },
+        {
+          "layer": "05_GLUE_TAB",
+          "name": "segment_2",
+          "anchors": [
+            {
+              "x": 25,
+              "y": 311
+            },
+            {
+              "x": 55.3,
+              "y": 319
+            }
+          ],
+          "editable": true
+        },
+        {
+          "layer": "05_GLUE_TAB",
+          "name": "segment_1",
+          "anchors": [
+            {
+              "x": 25,
+              "y": 127
+            },
+            {
+              "x": 25,
+              "y": 311
+            }
+          ],
+          "editable": true
+        },
+        {
+          "layer": "05_GLUE_TAB",
+          "name": "segment_0",
+          "anchors": [
+            {
+              "x": 55.3,
+              "y": 119
+            },
+            {
+              "x": 25,
+              "y": 127
+            }
+          ],
+          "editable": true
+        }
+      ],
+      "texts": [
+        {
+          "layer": "06_DIMENSIONS",
+          "name": "text_8",
+          "contents": "G 30.3",
+          "editable": true
+        },
+        {
+          "layer": "06_DIMENSIONS",
+          "name": "text_7",
+          "contents": "B4  182 x 91",
+          "editable": true
+        },
+        {
+          "layer": "06_DIMENSIONS",
+          "name": "text_6",
+          "contents": "T4  182 x 91",
+          "editable": true
+        },
+        {
+          "layer": "06_DIMENSIONS",
+          "name": "text_5",
+          "contents": "B3  200 x 91",
+          "editable": true
+        },
+        {
+          "layer": "06_DIMENSIONS",
+          "name": "text_4",
+          "contents": "T3  200 x 91",
+          "editable": true
+        },
+        {
+          "layer": "06_DIMENSIONS",
+          "name": "text_3",
+          "contents": "B2  182 x 91",
+          "editable": true
+        },
+        {
+          "layer": "06_DIMENSIONS",
+          "name": "text_2",
+          "contents": "T2  182 x 91",
+          "editable": true
+        },
+        {
+          "layer": "06_DIMENSIONS",
+          "name": "text_1",
+          "contents": "B1  200 x 91",
+          "editable": true
+        },
+        {
+          "layer": "06_DIMENSIONS",
+          "name": "text_0",
+          "contents": "T1  200 x 91",
+          "editable": true
+        },
+        {
+          "layer": "07_FACE_IDS",
+          "name": "text_3",
+          "contents": "P4 / W / 182",
+          "editable": true
+        },
+        {
+          "layer": "07_FACE_IDS",
+          "name": "text_2",
+          "contents": "P3 / L / 200",
+          "editable": true
+        },
+        {
+          "layer": "07_FACE_IDS",
+          "name": "text_1",
+          "contents": "P2 / W / 182",
+          "editable": true
+        },
+        {
+          "layer": "07_FACE_IDS",
+          "name": "text_0",
+          "contents": "P1 / L / 200",
+          "editable": true
+        },
+        {
+          "layer": "08_NOTES",
+          "name": "text_4",
+          "contents": "REFERENCE / CUSTOMER ARTWORK TEMPLATE | NOT PRODUCTION DIELINE | UNVERIFIED_PRINT_LAYOUT_TEMPLATE",
+          "editable": true
+        },
+        {
+          "layer": "08_NOTES",
+          "name": "text_3",
+          "contents": "TOTAL 794.3 x 382 mm | FLAPS 91 / 91 mm | GLUE SLOPE UNVERIFIED_STYLE_PARAMETER",
+          "editable": true
+        },
+        {
+          "layer": "08_NOTES",
+          "name": "text_2",
+          "contents": "GLUE FLAP 30.3 mm | TOP / BOTTOM RULE LAYOUT W / 2 | SLOT STYLE XIECHENG_SLOT_STYLE_01",
+          "editable": true
+        },
+        {
+          "layer": "08_NOTES",
+          "name": "text_1",
+          "contents": "CASE XC-AI-CASE03 | REVISION R1 | NOMINAL 200 x 180 x 200 mm | LAYOUT 200 x 182 x 200 mm",
+          "editable": true
+        },
+        {
+          "layer": "08_NOTES",
+          "name": "text_0",
+          "contents": "XIECHENG / A1 PRINT LAYOUT / SLOT STYLE 01",
+          "editable": true
+        }
+      ]
+    }
+  ],
+  "completed": true
+}

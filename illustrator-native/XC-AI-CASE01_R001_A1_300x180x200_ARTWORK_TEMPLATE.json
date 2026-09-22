@@ -1,0 +1,39 @@
+{
+  "schema": "xiecheng.a1.print-template.v3",
+  "unit": "mm",
+  "boxType": "A1",
+  "glueFlapMm": 30.3,
+  "flapRule": "LAYOUT_W_DIV_2",
+  "slotStyle": "XIECHENG_SLOT_STYLE_01",
+  "geometryStatus": "UNVERIFIED_PRINT_LAYOUT_TEMPLATE",
+  "slotStyleParameters": {
+    "glueTabSlopeInsetMm": 8,
+    "verificationStatus": "UNVERIFIED_STYLE_PARAMETER"
+  },
+  "caseCode": "XC-AI-CASE01",
+  "revision": 1,
+  "nominalDimension": {
+    "L": 300,
+    "W": 180,
+    "H": 200
+  },
+  "layoutOverride": false,
+  "layoutDimension": {
+    "L": 300,
+    "W": 180,
+    "H": 200
+  },
+  "derivedGeometry": {
+    "panelsMm": [
+      300,
+      180,
+      300,
+      180
+    ],
+    "topFlapMm": 90,
+    "bodyHeightMm": 200,
+    "bottomFlapMm": 90,
+    "totalWidthMm": 990.3,
+    "totalHeightMm": 380
+  }
+}

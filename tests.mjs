@@ -15,6 +15,7 @@ import {
   sceneToSvg,
   serializeCase,
 } from './geometry.mjs';
+import { NATIVE_CASES, TOLERANCE_MM } from './illustrator-native.mjs';
 
 test('six frozen geometry cases', () => {
   const cases = [
@@ -51,6 +52,13 @@ test('semantic scene and vector exports', () => {
   assert.equal(scene.layers.CREASE_REFERENCE.items.length, 6);
   assert.equal(scene.layers.GLUE_TAB.items.length, 3);
   assert.equal(scene.layers.ARTWORK.items.length, 0);
+  const notes = scene.layers.NOTES.items.map((item) => item.value).join('\n');
+  assert.match(notes, /CASE XC-DEMO \| REVISION R1/);
+  assert.match(notes, /GLUE FLAP 30\.3 mm/);
+  assert.match(notes, /TOP \/ BOTTOM RULE LAYOUT W \/ 2/);
+  assert.match(notes, /SLOT STYLE XIECHENG_SLOT_STYLE_01/);
+  assert.match(notes, /REFERENCE \/ CUSTOMER ARTWORK TEMPLATE/);
+  assert.match(notes, /NOT PRODUCTION DIELINE/);
   const svg = sceneToSvg(scene);
   for (const layerName of LAYER_ORDER) assert.match(svg, new RegExp(`data-layer="${layerName}"`));
   assert.match(svg, /width="844\.3mm"/);
@@ -84,4 +92,31 @@ test('V0.3 JSON round-trip and legacy freeze migration', () => {
   assert.equal(migratedGeometry.glueFlapMm, 30.3);
   assert.equal(migratedGeometry.topFlapMm, 91);
   assert.equal(migratedGeometry.bottomFlapMm, 91);
+});
+
+test('Illustrator native cases reuse the canonical scene without changing frozen geometry', () => {
+  assert.equal(TOLERANCE_MM, 0.01);
+  assert.equal(NATIVE_CASES.length, 3);
+  const [case1, case2, case3] = NATIVE_CASES.map(({ caseData }) => ({ caseData, scene: buildScene(caseData) }));
+  assert.deepEqual(case1.scene.geometry, {
+    glueFlapMm: 30.3,
+    topFlapMm: 90,
+    bottomFlapMm: 90,
+    bodyHeightMm: 200,
+    panelWidthsMm: [300, 180, 300, 180],
+    panelBoundariesMm: [30.3, 330.3, 510.3, 810.3, 990.3],
+    totalWidthMm: 990.3,
+    totalHeightMm: 380,
+  });
+  assert.deepEqual(case2.scene.geometry.panelWidthsMm, [450, 300, 450, 300]);
+  assert.equal(case2.scene.geometry.glueFlapMm, 30.3);
+  assert.equal(case2.scene.geometry.topFlapMm, 150);
+  assert.equal(case2.scene.geometry.bottomFlapMm, 150);
+  assert.equal(case2.scene.geometry.totalWidthMm, 1530.3);
+  assert.equal(case2.scene.geometry.totalHeightMm, 600);
+  assert.deepEqual(case3.caseData.nominal, { L: 200, W: 180, H: 200 });
+  assert.deepEqual(case3.caseData.layout, { L: 200, W: 182, H: 200 });
+  assert.deepEqual(case3.scene.geometry.panelWidthsMm, [200, 182, 200, 182]);
+  assert.equal(case3.scene.geometry.topFlapMm, 91);
+  assert.equal(case3.scene.geometry.bottomFlapMm, 91);
 });
