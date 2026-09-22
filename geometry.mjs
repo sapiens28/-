@@ -7,7 +7,7 @@ export const GEOMETRY_STATUS = 'UNVERIFIED_PRINT_LAYOUT_TEMPLATE';
 // Style 01 only freezes the presence of a slope. This value is intentionally
 // isolated and labelled as unverified until a production owner confirms it.
 export const SLOT_STYLE_01_INTERNAL_PARAMETER = Object.freeze({
-  glueTabSlopeInsetMm: 12,
+  glueTabSlopeInsetMm: 8,
   verificationStatus: 'UNVERIFIED_STYLE_PARAMETER',
 });
 
