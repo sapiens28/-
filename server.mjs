@@ -18,4 +18,4 @@ createServer((request, response) => {
   }
   response.writeHead(200, { 'Content-Type': mime[extname(target)] || 'application/octet-stream', 'Cache-Control': 'no-store' });
   createReadStream(target).pipe(response);
-}).listen(port, '127.0.0.1', () => console.log(`A1 V0.3 preview: http://127.0.0.1:${port}`));
+}).listen(port, '127.0.0.1', () => console.log(`A1 V0.4 preview: http://127.0.0.1:${port}`));

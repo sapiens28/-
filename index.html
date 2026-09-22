@@ -5,124 +5,88 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="color-scheme" content="light">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self' blob: data:; script-src 'self'; style-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
-  <title>劦成｜A1 外印刷模板 V0.3</title>
+  <title>劦成｜紙箱展開圖</title>
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
   <header class="topbar">
     <div class="brand">
       <div class="mark">劦成</div>
-      <div><strong>紙箱印刷模板</strong><div class="sub">A1 外印刷展開圖 · Geometry Freeze V0.3</div></div>
+      <div><strong>紙箱展開圖</strong><div class="sub">A1 外印刷作圖模板</div></div>
     </div>
-    <span class="pill">獨立預覽 · 不連 ERP / Supabase</span>
   </header>
 
   <main>
-    <div class="intro">
-      <div>
-        <p class="eyebrow">XIECHENG-A1-TEMPLATE-V03</p>
-        <h1>輸入長、寬、高，直接生成外印刷模板。</h1>
-        <p>四面順序 L / W / L / W，接舌固定 30.3 mm，上下蓋片由排版 W ÷ 2 自動計算。</p>
-      </div>
-      <span class="statusBadge">外印刷作圖模板 · 非生產刀模</span>
-    </div>
-
     <div id="err" class="error" role="alert" hidden></div>
 
     <div class="layoutGrid">
       <section class="card controls" aria-labelledby="settings-title">
-        <p class="eyebrow">01 / 案件與尺寸</p>
-        <h2 id="settings-title">A1 外印刷模板</h2>
-
-        <div class="twoCol">
-          <label class="field"><span>案件代碼</span><input id="caseCode" value="XC-DEMO" maxlength="24" autocomplete="off"></label>
-          <label class="field"><span>版次</span><input id="revision" type="number" value="1" min="1" max="999" inputmode="numeric"></label>
-        </div>
-
-        <div class="separator"></div>
+        <h1 id="settings-title">紙箱尺寸</h1>
+        <p class="sectionIntro">輸入尺寸後，右側展開圖會即時更新。</p>
 
         <fieldset>
-          <legend>Nominal 客戶原始尺寸 · mm</legend>
-          <div class="threeCol">
-            <label class="field"><span>長 L</span><input id="L" type="number" value="300" min="20" max="1500" step="0.1" inputmode="decimal"></label>
-            <label class="field"><span>寬 W</span><input id="W" type="number" value="180" min="20" max="1500" step="0.1" inputmode="decimal"></label>
-            <label class="field"><span>高 H</span><input id="H" type="number" value="200" min="20" max="1500" step="0.1" inputmode="decimal"></label>
-          </div>
-          <p class="hint">保留客戶原始尺寸，不自動判定內徑／外徑，不加入材質或生產補償。</p>
-        </fieldset>
-
-        <label class="toggleRow">
-          <input id="layoutOverride" type="checkbox">
-          <span><strong>本次排版尺寸不同</strong><small>同時保留 Nominal 與 Layout 尺寸</small></span>
-        </label>
-
-        <fieldset id="layoutOverrideBox" class="overrideBox" hidden>
-          <legend>Layout 本次排版尺寸 · mm</legend>
-          <div class="threeCol">
-            <label class="field"><span>Layout L</span><input id="layoutL" type="number" value="300" min="20" max="1500" step="0.1" inputmode="decimal"></label>
-            <label class="field"><span>Layout W</span><input id="layoutW" type="number" value="180" min="20" max="1500" step="0.1" inputmode="decimal"></label>
-            <label class="field"><span>Layout H</span><input id="layoutH" type="number" value="200" min="20" max="1500" step="0.1" inputmode="decimal"></label>
+          <legend class="srOnly">紙箱尺寸，單位毫米</legend>
+          <div class="dimensionGrid">
+            <label class="field"><span>長 L</span><span class="inputWithUnit"><input id="L" type="number" value="300" min="20" max="1500" step="0.1" inputmode="decimal"><i>mm</i></span></label>
+            <label class="field"><span>寬 W</span><span class="inputWithUnit"><input id="W" type="number" value="180" min="20" max="1500" step="0.1" inputmode="decimal"><i>mm</i></span></label>
+            <label class="field"><span>高 H</span><span class="inputWithUnit"><input id="H" type="number" value="200" min="20" max="1500" step="0.1" inputmode="decimal"><i>mm</i></span></label>
           </div>
         </fieldset>
 
-        <div class="fixedRules" aria-label="已凍結結構規則">
-          <div><span>接舌</span><strong>固定 30.3 mm</strong></div>
-          <div><span>上下蓋</span><strong>Layout W ÷ 2</strong></div>
-          <div><span>切槽</span><strong>Slot Style 01</strong></div>
-        </div>
+        <fieldset class="paperSelector">
+          <legend>紙板預覽</legend>
+          <div class="paperToneGroup" role="group" aria-label="紙板預覽顏色">
+            <button class="paperTone" type="button" data-paper-tone="kraft" aria-pressed="true"><span class="swatch kraft" aria-hidden="true"></span>牛皮色</button>
+            <button class="paperTone" type="button" data-paper-tone="imported" aria-pressed="false"><span class="swatch imported" aria-hidden="true"></span>仿進口色</button>
+            <button class="paperTone" type="button" data-paper-tone="white" aria-pressed="false"><span class="swatch white" aria-hidden="true"></span>白色</button>
+          </div>
+          <p class="paperDisclaimer">紙色僅供螢幕視覺搭配參考，實際紙板與印刷效果以實物為準。</p>
+        </fieldset>
 
-        <div class="notice"><strong>幾何規則已凍結。</strong><span>接舌斜切為未驗證樣式參數；本工具是客戶外印刷作圖模板，不是生產刀模 CAD。</span></div>
+        <details id="advancedSettings" class="advancedSettings">
+          <summary>進階設定</summary>
+          <div class="advancedBody">
+            <label class="toggleRow">
+              <input id="layoutOverride" type="checkbox">
+              <span>本次排版尺寸與標示尺寸不同</span>
+            </label>
+            <fieldset id="layoutOverrideBox" class="overrideBox" hidden>
+              <legend>本次排版尺寸 · mm</legend>
+              <div class="layoutDimensions">
+                <label class="field"><span>Layout L</span><input id="layoutL" type="number" value="300" min="20" max="1500" step="0.1" inputmode="decimal"></label>
+                <label class="field"><span>Layout W</span><input id="layoutW" type="number" value="180" min="20" max="1500" step="0.1" inputmode="decimal"></label>
+                <label class="field"><span>Layout H</span><input id="layoutH" type="number" value="200" min="20" max="1500" step="0.1" inputmode="decimal"></label>
+              </div>
+            </fieldset>
+          </div>
+        </details>
 
-        <div class="presets" aria-label="測試案例">
-          <button class="button preset" type="button" data-preset="250,225,200">250×225×200</button>
-          <button class="button preset" type="button" data-preset="380,300,310">380×300×310</button>
-          <button class="button preset" type="button" data-preset="300,180,200">300×180×200</button>
-          <button class="button preset" type="button" data-preset="200,200,200">200×200×200</button>
-          <button class="button preset" type="button" data-preset="450,300,300">450×300×300</button>
-          <button class="button preset" type="button" data-preset="200,180,200,200,182,200">Nominal 200×180×200 → Layout W182</button>
+        <div class="compatibilityControls" hidden>
+          <input id="caseCode" value="XC-A1">
+          <input id="revision" type="number" value="1">
+          <button id="downloadSvg" type="button">下載 SVG</button>
+          <button id="downloadJson" type="button">保存案件 JSON</button>
+          <button id="importJson" type="button">匯入案件 JSON</button>
+          <input id="jsonFile" type="file" accept=".json,application/json">
         </div>
       </section>
 
       <section class="card previewCard" aria-labelledby="preview-title">
-        <div class="previewHeader">
-          <div>
-            <p class="eyebrow">02 / CANONICAL GEOMETRY</p>
-            <h2 id="preview-title">外印刷展開圖</h2>
-            <p>畫面等比縮放；SVG 與 PDF 共用同一份 scene，下載檔以 mm 建立。</p>
-          </div>
-          <span class="statusBadge">SLOT STYLE 01</span>
-        </div>
-
-        <div class="legend" aria-label="圖層圖例">
-          <span><i class="line outline"></i>外框／接舌</span>
-          <span><i class="line crease"></i>壓線參考</span>
-          <span><i class="line slot"></i>切槽參考</span>
-        </div>
-
+        <div class="previewHeader"><h2 id="preview-title">即時預覽</h2></div>
         <div id="drawing" class="drawing" aria-live="polite"></div>
 
         <div class="metrics">
-          <div class="metric"><small>模板總尺寸</small><strong id="totalSize">—</strong></div>
-          <div class="metric"><small>四面配置</small><strong id="panelSizes">—</strong></div>
-          <div class="metric"><small>蓋片／箱身／蓋片</small><strong id="verticalSizes">—</strong></div>
-          <div class="metric"><small>Nominal</small><strong id="nominalSize">—</strong></div>
-          <div class="metric"><small>Layout</small><strong id="layoutSize">—</strong></div>
-          <div class="metric"><small>接舌</small><strong>30.3 mm</strong></div>
+          <div class="metric"><small>紙箱尺寸</small><strong id="boxSize">—</strong></div>
+          <div class="metric"><small>模板尺寸</small><strong id="totalSize">—</strong></div>
         </div>
 
-        <div class="actions">
-          <button id="downloadPdf" class="button primary" type="button">下載 1:1 向量 PDF</button>
-          <button id="downloadSvg" class="button" type="button">下載 SVG</button>
-          <button id="downloadJson" class="button" type="button">保存案件 JSON</button>
-          <button id="importJson" class="button" type="button">匯入案件 JSON</button>
-          <input id="jsonFile" type="file" accept=".json,application/json" hidden>
+        <div class="downloadArea">
+          <button id="downloadPdf" class="button primary" type="button">下載 PDF 作圖模板</button>
         </div>
-
-        <div class="nextStage"><span>本機 AI 原生流程</span><strong>Round-trip 已通過</strong><small>靜態預覽無法直接呼叫本機 Illustrator，因此不提供瀏覽器 AI 下載；請使用 Repo 內的 local-only generator。</small></div>
       </section>
     </div>
 
-    <footer>XC-A1-TEMPLATE / V0.3 · 獨立測試頁 · 本機 Illustrator workflow · 不含客戶圖稿 · 無後端或外部資料傳輸</footer>
+    <footer>劦成紙箱展開圖 · 紙色為螢幕預覽，實際效果以實物為準</footer>
   </main>
 
   <script type="module" src="./app.mjs"></script>

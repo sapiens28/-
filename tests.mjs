@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import { readFile } from 'node:fs/promises';
 import test from 'node:test';
 import {
   FLAP_RULE,
@@ -16,6 +17,7 @@ import {
   serializeCase,
 } from './geometry.mjs';
 import { NATIVE_CASES, TOLERANCE_MM } from './illustrator-native.mjs';
+import { PAPER_TONES, paperToneDisclaimer, sceneToPreviewSvg } from './preview.mjs';
 
 test('six frozen geometry cases', () => {
   const cases = [
@@ -119,4 +121,55 @@ test('Illustrator native cases reuse the canonical scene without changing frozen
   assert.deepEqual(case3.scene.geometry.panelWidthsMm, [200, 182, 200, 182]);
   assert.equal(case3.scene.geometry.topFlapMm, 91);
   assert.equal(case3.scene.geometry.bottomFlapMm, 91);
+});
+
+test('paper tones affect only the preview render layer in all V0.4 QA cases', () => {
+  const cases = [
+    { nominal: { L: 300, W: 180, H: 200 } },
+    { nominal: { L: 450, W: 300, H: 300 } },
+    { nominal: { L: 200, W: 200, H: 200 } },
+    {
+      nominal: { L: 200, W: 180, H: 200 },
+      layoutOverride: { enabled: true, L: 200, W: 182, H: 200 },
+    },
+  ];
+
+  for (const [index, input] of cases.entries()) {
+    const caseData = createCase({ caseCode: `TONE-${index + 1}`, revision: 1, ...input });
+    const scene = buildScene(caseData);
+    const pdfBefore = sceneToPdfBytes(scene);
+    const exportSvgBefore = sceneToSvg(scene);
+    const jsonBefore = serializeCase(caseData);
+
+    for (const [key, tone] of Object.entries(PAPER_TONES)) {
+      const previewSvg = sceneToPreviewSvg(scene, key);
+      assert.match(previewSvg, new RegExp(`data-paper-tone="${tone.token}"`));
+      assert.match(previewSvg, new RegExp(`fill="${tone.color}"`, 'i'));
+      assert.match(previewSvg, /data-preview-status="VISUAL_PREVIEW_ONLY"/);
+      assert.doesNotMatch(previewSvg, /<text\b/);
+      assert.doesNotMatch(previewSvg, /FACE_IDS|DIMENSIONS|NOTES/);
+      assert.deepEqual(sceneToPdfBytes(scene), pdfBefore);
+      assert.equal(sceneToSvg(scene), exportSvgBefore);
+      assert.deepEqual(serializeCase(caseData), jsonBefore);
+    }
+
+    for (const tone of Object.values(PAPER_TONES)) {
+      assert.doesNotMatch(exportSvgBefore, new RegExp(tone.color, 'i'));
+      assert.doesNotMatch(new TextDecoder().decode(pdfBefore), new RegExp(tone.token));
+    }
+  }
+
+  assert.equal(paperToneDisclaimer(), '紙色僅供螢幕視覺搭配參考，實際紙板與印刷效果以實物為準。');
+});
+
+test('V0.4 front-end exposes only the daily-use controls', async () => {
+  const html = await readFile(new URL('./index.html', import.meta.url), 'utf8');
+  assert.match(html, /紙箱尺寸/);
+  assert.match(html, /data-paper-tone="kraft"/);
+  assert.match(html, /data-paper-tone="imported"/);
+  assert.match(html, /data-paper-tone="white"/);
+  assert.match(html, /<details id="advancedSettings"/);
+  assert.match(html, /下載 PDF 作圖模板/);
+  assert.match(html, /<div class="compatibilityControls" hidden>/);
+  assert.doesNotMatch(html, /Canonical Geometry|UNVERIFIED|Geometry Status|Native AI|Round-trip|SLOT STYLE 01/);
 });

@@ -10,9 +10,11 @@ import {
   serializeCase,
   validateCase,
 } from './geometry.mjs';
+import { PAPER_TONES, sceneToPreviewSvg } from './preview.mjs';
 
 const $ = (id) => document.getElementById(id);
 const numberValue = (id) => Number($(id).value);
+let selectedPaperTone = 'kraft';
 
 function readForm() {
   const nominal = { L: numberValue('L'), W: numberValue('W'), H: numberValue('H') };
@@ -40,12 +42,9 @@ function render() {
     return;
   }
   const geometry = calculateGeometry(caseData);
-  $('drawing').innerHTML = sceneToSvg(buildScene(caseData));
+  $('drawing').innerHTML = sceneToPreviewSvg(buildScene(caseData), selectedPaperTone);
   $('totalSize').textContent = `${formatMm(geometry.totalWidthMm)} × ${formatMm(geometry.totalHeightMm)} mm`;
-  $('panelSizes').textContent = geometry.panelWidthsMm.map(formatMm).join(' / ');
-  $('verticalSizes').textContent = `${formatMm(geometry.topFlapMm)} / ${formatMm(geometry.bodyHeightMm)} / ${formatMm(geometry.bottomFlapMm)} mm`;
-  $('nominalSize').textContent = `${dimensionText(caseData.nominal)} mm`;
-  $('layoutSize').textContent = `${dimensionText(caseData.layout)} mm`;
+  $('boxSize').textContent = `${dimensionText(caseData.nominal)} mm`;
 }
 
 function download(data, mimeType, fileName) {
@@ -61,7 +60,7 @@ function download(data, mimeType, fileName) {
 
 function fileBase(caseData) {
   const revision = String(caseData.revision).padStart(3, '0');
-  return `${caseData.caseCode}_R${revision}_A1_${dimensionText(caseData.nominal).replaceAll(' ', '')}_V03`;
+  return `${caseData.caseCode}_R${revision}_A1_${dimensionText(caseData.nominal).replaceAll(' ', '')}_V04`;
 }
 
 function currentValidCase() {
@@ -106,6 +105,7 @@ $('jsonFile').addEventListener('change', async () => {
       $(`layout${key}`).value = caseData.layout[key];
     }
     $('layoutOverride').checked = caseData.layoutOverride;
+    if (caseData.layoutOverride) $('advancedSettings').open = true;
     render();
   } catch (error) {
     $('err').hidden = false;
@@ -118,17 +118,12 @@ document.querySelectorAll('input:not([type="file"])').forEach((input) => {
   input.addEventListener('change', render);
 });
 
-document.querySelectorAll('[data-preset]').forEach((button) => {
+document.querySelectorAll('[data-paper-tone]').forEach((button) => {
   button.addEventListener('click', () => {
-    const [L, W, H, layoutL, layoutW, layoutH] = button.dataset.preset.split(',').map(Number);
-    $('L').value = L;
-    $('W').value = W;
-    $('H').value = H;
-    const hasOverride = Number.isFinite(layoutL);
-    $('layoutOverride').checked = hasOverride;
-    $('layoutL').value = hasOverride ? layoutL : L;
-    $('layoutW').value = hasOverride ? layoutW : W;
-    $('layoutH').value = hasOverride ? layoutH : H;
+    selectedPaperTone = PAPER_TONES[button.dataset.paperTone] ? button.dataset.paperTone : 'kraft';
+    document.querySelectorAll('[data-paper-tone]').forEach((toneButton) => {
+      toneButton.setAttribute('aria-pressed', String(toneButton.dataset.paperTone === selectedPaperTone));
+    });
     render();
   });
 });
