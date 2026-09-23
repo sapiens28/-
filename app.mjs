@@ -10,7 +10,7 @@ import {
   serializeCase,
   validateCase,
 } from './geometry.mjs';
-import { PAPER_TONES, sceneToPreviewSvg } from './preview.mjs?v=20260923-1';
+import { PAPER_TONES, sceneToPreviewSvg } from './preview.mjs?v=20260923-2';
 
 const $ = (id) => document.getElementById(id);
 const numberValue = (id) => Number($(id).value);

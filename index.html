@@ -6,7 +6,7 @@
   <meta name="color-scheme" content="light">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self' blob: data:; script-src 'self'; style-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
   <title>劦成｜紙箱展開圖</title>
-  <link rel="stylesheet" href="./styles.css?v=20260923-1">
+  <link rel="stylesheet" href="./styles.css?v=20260923-2">
 </head>
 <body>
   <header class="topbar">
@@ -33,14 +33,14 @@
           </div>
         </fieldset>
 
-        <fieldset class="paperSelector">
+        <fieldset class="paperSelector" data-dashboard-control="paper-tone">
           <legend>紙板預覽</legend>
           <div class="paperToneGroup" role="group" aria-label="紙板預覽顏色">
-            <button class="paperTone" type="button" data-paper-tone="kraft" aria-pressed="true"><span class="swatch kraft" aria-hidden="true"></span>牛皮色</button>
-            <button class="paperTone" type="button" data-paper-tone="imported" aria-pressed="false"><span class="swatch imported" aria-hidden="true"></span>仿進口色</button>
+            <button class="paperTone" type="button" data-paper-tone="kraft" aria-pressed="true"><span class="swatch kraft" aria-hidden="true"></span>黃皮</button>
+            <button class="paperTone" type="button" data-paper-tone="imported" aria-pressed="false"><span class="swatch imported" aria-hidden="true"></span>仿進口</button>
             <button class="paperTone" type="button" data-paper-tone="white" aria-pressed="false"><span class="swatch white" aria-hidden="true"></span>白色</button>
           </div>
-          <p class="paperDisclaimer">紙色僅供螢幕視覺搭配參考，實際紙板與印刷效果以實物為準。</p>
+          <p class="paperDisclaimer">黃皮與仿進口（紅褐）皆為螢幕近似色，實際紙板與印刷效果以實物為準。</p>
         </fieldset>
 
         <details id="advancedSettings" class="advancedSettings">
@@ -89,6 +89,6 @@
     <footer>劦成紙箱展開圖 · 紙色為螢幕預覽，實際效果以實物為準</footer>
   </main>
 
-  <script type="module" src="./app.mjs?v=20260923-1"></script>
+  <script type="module" src="./app.mjs?v=20260923-2"></script>
 </body>
 </html>

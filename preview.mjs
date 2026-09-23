@@ -1,6 +1,6 @@
 export const PAPER_TONES = Object.freeze({
-  kraft: Object.freeze({ token: 'PAPER_TONE_KRAFT', color: '#B78B5B', label: '牛皮色', status: 'VISUAL_PREVIEW_ONLY' }),
-  imported: Object.freeze({ token: 'PAPER_TONE_IMPORTED_SIM', color: '#D2B586', label: '仿進口色', status: 'VISUAL_PREVIEW_ONLY' }),
+  kraft: Object.freeze({ token: 'PAPER_TONE_KRAFT', color: '#C1A369', label: '黃皮', status: 'VISUAL_PREVIEW_ONLY' }),
+  imported: Object.freeze({ token: 'PAPER_TONE_IMPORTED_SIM', color: '#B47755', label: '仿進口', status: 'VISUAL_PREVIEW_ONLY' }),
   white: Object.freeze({ token: 'PAPER_TONE_WHITE', color: '#F6F3EB', label: '白色', status: 'VISUAL_PREVIEW_ONLY' }),
 });
 
@@ -57,5 +57,5 @@ export function sceneToPreviewSvg(scene, paperToneKey = 'kraft') {
 }
 
 export function paperToneDisclaimer() {
-  return '紙色僅供螢幕視覺搭配參考，實際紙板與印刷效果以實物為準。';
+  return '黃皮與仿進口（紅褐）皆為螢幕近似色，實際紙板與印刷效果以實物為準。';
 }

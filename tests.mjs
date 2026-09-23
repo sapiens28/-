@@ -124,6 +124,10 @@ test('Illustrator native cases reuse the canonical scene without changing frozen
 });
 
 test('paper tones affect only the preview render layer in all V0.4 QA cases', () => {
+  assert.deepEqual(
+    Object.fromEntries(Object.entries(PAPER_TONES).map(([key, tone]) => [key, tone.color])),
+    { kraft: '#C1A369', imported: '#B47755', white: '#F6F3EB' },
+  );
   const cases = [
     { nominal: { L: 300, W: 180, H: 200 } },
     { nominal: { L: 450, W: 300, H: 300 } },
@@ -159,7 +163,7 @@ test('paper tones affect only the preview render layer in all V0.4 QA cases', ()
     }
   }
 
-  assert.equal(paperToneDisclaimer(), '紙色僅供螢幕視覺搭配參考，實際紙板與印刷效果以實物為準。');
+  assert.equal(paperToneDisclaimer(), '黃皮與仿進口（紅褐）皆為螢幕近似色，實際紙板與印刷效果以實物為準。');
 });
 
 test('V0.4 front-end exposes only the daily-use controls', async () => {
@@ -168,10 +172,13 @@ test('V0.4 front-end exposes only the daily-use controls', async () => {
   assert.match(html, /data-paper-tone="kraft"/);
   assert.match(html, /data-paper-tone="imported"/);
   assert.match(html, /data-paper-tone="white"/);
+  assert.match(html, /data-dashboard-control="paper-tone"/);
+  assert.match(html, />黃皮<\/button>/);
+  assert.match(html, />仿進口<\/button>/);
   assert.match(html, /<details id="advancedSettings"/);
   assert.match(html, /下載 PDF 作圖模板/);
   assert.match(html, /<div class="compatibilityControls" hidden>/);
-  assert.match(html, /styles\.css\?v=20260923-1/);
-  assert.match(html, /app\.mjs\?v=20260923-1/);
+  assert.match(html, /styles\.css\?v=20260923-2/);
+  assert.match(html, /app\.mjs\?v=20260923-2/);
   assert.doesNotMatch(html, /Canonical Geometry|UNVERIFIED|Geometry Status|Native AI|Round-trip|SLOT STYLE 01/);
 });
