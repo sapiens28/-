@@ -171,5 +171,7 @@ test('V0.4 front-end exposes only the daily-use controls', async () => {
   assert.match(html, /<details id="advancedSettings"/);
   assert.match(html, /下載 PDF 作圖模板/);
   assert.match(html, /<div class="compatibilityControls" hidden>/);
+  assert.match(html, /styles\.css\?v=20260923-1/);
+  assert.match(html, /app\.mjs\?v=20260923-1/);
   assert.doesNotMatch(html, /Canonical Geometry|UNVERIFIED|Geometry Status|Native AI|Round-trip|SLOT STYLE 01/);
 });
